@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+        }
+
+        .code-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .code-card {
+            background: #1e1e1e;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .code-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .code-header {
+            padding: 15px 20px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .language-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .python-icon {
+            background: #3776ab;
+        }
+
+        .cpp-icon {
+            background: #00599c;
+        }
+
+        .code-content {
+            padding: 25px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #d4d4d4;
+            overflow-x: auto;
+        }
+
+        .keyword {
+            color: #569cd6;
+        }
+
+        .string {
+            color: #ce9178;
+        }
+
+        .function {
+            color: #dcdcaa;
+        }
+
+        .comment {
+            color: #6a9955;
+            font-style: italic;
+        }
+
+        .preprocessor {
+            color: #c586c0;
+        }
+
+        .run-button {
+            margin: 20px;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .run-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .output {
+            margin: 20px;
+            padding: 15px 20px;
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            color: #333;
+            display: none;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .code-section {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .code-card {
+                min-width: unset;
+            }
+
+            .code-content {
+                font-size: 12px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello World</h1>
+        <p class="subtitle">Classic programming examples in Python and C++</p>
+        
+        <div class="code-section">
+            <div class="code-card">
+                <div class="code-header">
+                    <span>Python</span>
+                    <div class="language-icon python-icon">🐍</div>
+                </div>
+                <div class="code-content">
+<span class="comment"># Simple Hello World in Python</span>
+<span class="keyword">def</span> <span class="function">main</span>():
+    <span class="function">print</span>(<span class="string">"Hello, World!"</span>)
+
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+    <span class="function">main</span>()
+                </div>
+                <button class="run-button" onclick="runPython()">Run Python Code</button>
+                <div class="output" id="python-output">Hello, World!</div>
+            </div>
+
+            <div class="code-card">
+                <div class="code-header">
+                    <span>C++</span>
+                    <div class="language-icon cpp-icon">C++</div>
+                </div>
+                <div class="code-content">
+<span class="preprocessor">#include</span> <span class="string">&lt;iostream&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    std::<span class="function">cout</span> <span class="keyword">&lt;&lt;</span> <span class="string">"Hello, World!"</span> <span class="keyword">&lt;&lt;</span> std::endl;
+    <span class="keyword">return</span> <span class="keyword">0</span>;
+}
+                </div>
+                <button class="run-button" onclick="runCpp()">Run C++ Code</button>
+                <div class="output" id="cpp-output">Hello, World!</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>The classic first program in two popular programming languages</p>
+        </div>
+    </div>
+
+    <script>
+        function runPython() {
+            const output = document.getElementById('python-output');
+            output.style.display = 'block';
+            output.innerHTML = 'Hello, World!';
+            
+            // Add a simple animation
+            output.style.opacity = '0';
+            setTimeout(() => {
+                output.style.transition = 'opacity 0.5s ease';
+                output.style.opacity = '1';
+            }, 100);
+        }
+
+        function runCpp() {
+            const output = document.getElementById('cpp-output');
+            output.style.display = 'block';
+            output.innerHTML = 'Hello, World!';
+            
+            // Add a simple animation
+            output.style.opacity = '0';
+            setTimeout(() => {
+                output.style.transition = 'opacity 0.5s ease';
+                output.style.opacity = '1';
+            }, 100);
+        }
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.code-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) rotateX(5deg)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) rotateX(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
